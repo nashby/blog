@@ -26,7 +26,7 @@ So it was something wrong with `Module#append`.
 
 I started looking for some bugs with `Module#append` on [Ruby's bugtracker](https://bugs.ruby-lang.org/). All I could find related was [this](https://bugs.ruby-lang.org/issues/8044) bug with `Object#methods` and `Module#prepend`. So what I needed to do is to check how they fixed it and do something similar with `Kernel#singleton_method`.
 
-DISCLAIMER: I'm not that good with Ruby internals so next part of the post might have some incorrect statements.
+**DISCLAIMER: I'm not that good with Ruby internals so next part of the post might have some incorrect statements.**
 
 Main thing I learned from `Object#methods` [fix](https://github.com/ruby/ruby/commit/99126a4c88d3ddb9ea76edf948307c7bfa0fe971) was `RCLASS_ORIGIN` macro. This macro is used to get origin class of the passed class/module. And as I discovered `Module#append` makes a copy of a target class internally so if you need to access original one you can use that macro. Honestly, I don't really understand why you can't access singleton method but I got the idea.
 
