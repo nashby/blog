@@ -19,7 +19,7 @@ class Foo
 end
 
 Foo.singleton_methods(:false) # => [:foo]
-Foo.singleton_method(:foo) # =>
+Foo.singleton_method(:foo) # => NameError (undefined singleton method `foo' for `Foo')
 ```
 
 So it was something wrong with `Module#append`.
