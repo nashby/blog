@@ -1,6 +1,6 @@
 ### Fixing `Kernel#singleton_method` bug in Ruby.
 
-Few days ago when I was browsing through StackOverflow I came across [this question](https://stackoverflow.com/questions/49597148/in-activesupportdeprecation-class-singleton-method-seems-to-be-strange) about weird behaviour of `Kernel#singleton_method` such as if you call `Kernel#singleton_methods` method on `ActiveSupport::Deprecation` class you would get you list of signleton methods (no surprise here) but when you try to get that singleton method with `Kernel#singleton_method` Ruby would throw `NameError` error:
+Few days ago when I was browsing through StackOverflow I came across [this question](https://stackoverflow.com/questions/49597148/in-activesupportdeprecation-class-singleton-method-seems-to-be-strange) about weird behaviour of `Kernel#singleton_method` such as if you call `Kernel#singleton_methods` method on `ActiveSupport::Deprecation` class you would get you list of singleton methods (no surprise here) but when you try to get that singleton method with `Kernel#singleton_method` Ruby would throw `NameError` error:
 
 ```ruby
 ActiveSupport::Deprecation.singleton_methods(false) # => [:debug, :initialize, ...]
