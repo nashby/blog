@@ -1,4 +1,4 @@
-Ruby 3.0 changes how subclassing core classes work.
+## Ruby 3.0 changes how subclassing core classes work.
 
 First of all you most likely [shouldn’t inherit from Ruby’s core classes](https://avdi.codes/why-you-shouldnt-inherit-from-rubys-core-classes-and-what-to-do-instead/). But if you still want to do it, it's better to know what was changed in Ruby 3.0.
 
